@@ -44,11 +44,10 @@ public class CalculatorTest {
         Assertions.assertTrue( actual);
     }
 
-    @Test
-    public void testNegative(){
+    @Test(testComment = "This test will fail")
+    public void testPositiveFail(){
         boolean actual = Calculator.isPositive( -5);
         Assertions.assertEquals( false, actual);
         Assertions.assertTrue( actual);
     }
-
 }

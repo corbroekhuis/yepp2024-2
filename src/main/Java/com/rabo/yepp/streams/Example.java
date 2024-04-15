@@ -2,6 +2,7 @@ package com.rabo.yepp.streams;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Example {
 
@@ -15,8 +16,8 @@ public class Example {
         emailAddresses.add("jane#rabo.nl");
         // add more if you want
 
-        // ! forEach
-        // Create stream (of Strings) from list and display every email, using a lambda
+        // 1 forEach
+        // Create stream (of email addresses) from the list and check/display every email address, using a lambda
         emailAddresses.stream()
                 .forEach( email -> checkEmail(email) );
 
@@ -30,10 +31,9 @@ public class Example {
 
         // 3 findAny
         // find john's email
-        String emailToFind = emailAddresses.stream()
+        Optional<String> emailToFind = emailAddresses.stream()
                 .filter( email -> email.startsWith("john"))
-                .findAny()
-                .orElse(null);
+                .findAny();
 
     }
 

@@ -9,14 +9,14 @@ public class Exercise01 {
 
         List<Integer> integerList = Arrays.asList(10, -42, 3, 14, -52, 67, 23, -65, 2, -12, 65);
 
-        // Create stream and use forEach to
+        // Create stream and use forEach to print the numbers
         integerList.stream()
                 .forEach( n-> printNumber( n));
 
-        // Create stream and use filter to collect negative numbers
+        // Create stream and use filter to collect negative numbers in a List
 
 
-        // Create stream and use filter to collect even numbers
+        // Create stream and use filter to collect even numbers in a List
         // Note: (n / 2) == 0 means n = even
 
 

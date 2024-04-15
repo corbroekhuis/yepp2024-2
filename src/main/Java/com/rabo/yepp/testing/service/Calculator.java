@@ -5,6 +5,7 @@ public class Calculator {
     static int power = 100;
 
     public static void reCharge(){
+        // Recharging for every test!
         System.out.println("Recharging....");
         power = 100;
     }
@@ -33,5 +34,4 @@ public class Calculator {
         power = power - 30;
         return a % 2 == 0;
     }
-
 }
