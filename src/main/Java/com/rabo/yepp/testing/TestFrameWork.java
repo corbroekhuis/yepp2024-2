@@ -54,7 +54,7 @@ public class TestFrameWork {
 
                 method.invoke(testClassInstance);
                 succes++;
-                System.out.printf("Comment: %s \nTest '%s' skipped \n",testComment, method.getName() );
+                System.out.printf("Comment: %s \nTest '%s' \n",testComment, method.getName() );
             } catch (InvocationTargetException e) {
                 // Note: Assertions may throw an AssertionException which is handled
                 // by the 'invoke' method, by throwing an InvocationTargetException
