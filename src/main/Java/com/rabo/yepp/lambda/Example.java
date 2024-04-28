@@ -20,11 +20,13 @@ public class Example {
         StringFormatter formatter;
 
         // The compiler knows that s must be a String. Also that a String is returned
-        formatter = s -> s.toLowerCase();
+        formatter = (s) -> s.toLowerCase();
         // This is the same
-        formatter = (s) -> { return s.toLowerCase();};
+        formatter = (s) -> {return s.toLowerCase();};
         // Another example
-        formatter = s -> "Hello " + s;
+        formatter = (s) -> "Hello " + s;
+
+        formatter = s -> s.toUpperCase();
 
         // We can pass a lambda as a parameter in a method
         useLambda(  formatter, "World!" );

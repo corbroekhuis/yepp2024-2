@@ -14,6 +14,7 @@ public class Exercise01 {
         MathematicalOperation mathematicalOperation;
 
         mathematicalOperation = n -> -n;
+        mathematicalOperation = n -> n % 2;
 
 
         // Add a method that takes a lambda as a parameter and uses it

@@ -34,15 +34,16 @@ public class Exercise03 {
         //Note that this strange looking (and useless) lambda also complies to the interface
         voidOperation = car -> {};
 
+        voidOperation = car -> System.out.println(car);
+
         // Create lambda that calls method printCarDetails
 
-
+        Car car = new Car();
+        printCarDetails( voidOperation, car);
     }
 
-    private static void printCarDetails( Car car){
-        System.out.println( car.toString());
+    private static void printCarDetails( VoidOperation voidOperation, Car car){
+        voidOperation.operate(car);
     }
-
-
 }
 

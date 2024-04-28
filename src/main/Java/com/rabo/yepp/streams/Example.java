@@ -32,8 +32,15 @@ public class Example {
         // 3 findAny
         // find john's email
         Optional<String> emailToFind = emailAddresses.stream()
-                .filter( email -> email.startsWith("john"))
+//                .parallel()
+//                .peek( email -> System.out.println(email))
+                .filter( email -> email.startsWith("xxx"))
                 .findAny();
+
+        if(emailToFind.isPresent()){
+            String email = emailToFind.get();
+            System.out.println( "Email: " + email);
+        }
 
     }
 

@@ -12,6 +12,14 @@ public class Example {
         Optional<Transaction> optional = Optional.of(transaction);
         if( optional.isPresent()){
             Transaction anotherTransaction = optional.get();
+            System.out.println(transaction);
+        }
+
+        transaction = null;
+        optional = Optional.ofNullable(transaction);
+        if( optional.isPresent()){
+            Transaction anotherTransaction = optional.get();
+            System.out.println(transaction);
         }
     }
 }

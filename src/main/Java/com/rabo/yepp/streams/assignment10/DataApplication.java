@@ -19,7 +19,7 @@ public class DataApplication {
         // Find the file that contains this string
         DataApplication dataApplication = new DataApplication();
 
-        Stream<Path> pathStream = Files.list( Paths.get("C:/Users/<username>/data"));
+        Stream<Path> pathStream = Files.list( Paths.get("C:/Temp/data"));
 
         // Note:
         // We start with a stream of Paths (files).
@@ -32,10 +32,25 @@ public class DataApplication {
         // flatMap( Stream1<String>,Stream2<String>,Stream3<String>) --> Stream<String> = String1,String2,String3,...
         // compare to putting the elements of multiple Lists into one single list
 
+        long start = System.currentTimeMillis();
+
+        Optional<String> s = pathStream
+        //               .parallel()        // May be faster because the work is assigned to multiple cpus
+        //        .filter( p -> !p.toFile().isDirectory())
+        //        .filter( p -> p.toFile().getName().endsWith(".txt"))
+        //        .peek( p -> System.out.println( p))
+                .flatMap( p -> dataApplication.getAllLines( p))
+                .filter( l -> l.contains("34567899999999876543"))
+                .findFirst();
+
+        System.out.println( "Execution time: " + (System.currentTimeMillis() - start));
+
+        System.out.println( s + " msecs");
     }
 
     private Stream<String> getAllLines(Path path){
 
+        System.out.println(path);
         List<String> lines = new ArrayList<>();
         try {
             lines = Files.readAllLines(path);
@@ -44,5 +59,4 @@ public class DataApplication {
         }
         return lines.stream();
     }
-
 }

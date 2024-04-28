@@ -12,6 +12,7 @@ public class Assignment8 {
 
         // Create a stream of lines from file
         Stream<String> lines = Files.lines( Paths.get("src/main/resources/data.txt"));
+        "".split(",");
         //  1
         //  Use method map to map each line to an array of Strings
         //  (this creates a stream of arrays)
